@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Unix-ify
+tr '\r' '\n' < $1 > unix_$1
+# Alternately...
+# perl -i -pe 's/\r/\n/g' uins-with-questions.txt
+
+
+sed "s/ //g" unix_$1 > clean_$1
+cat clean_$1 | sort > sorted_$1
+rm unix_$1
+rm clean_$1

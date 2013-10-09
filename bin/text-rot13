@@ -1,0 +1,18 @@
+#!/usr/bin/python
+'''
+Rot13 encode the input stream.
+'''
+__author__ = "Edward Delaporte"
+__copyright__ = "Copyright (C) 2010 Edward Delaporte"
+__date__ = "$Date$"
+__version__ = "$Revision$"
+__url__ = "$URL$"
+__last_change__ = "$Author$"
+__python_version__ = '2.5'
+
+import sys
+
+if __name__ == '__main__':
+	input_lines = sys.stdin.readlines()
+	for line in input_lines:
+		print line.encode('rot13').rstrip('\n')

@@ -1,0 +1,53 @@
+#!/usr/bin/python
+"""due"""
+# Copyright 2011 Edward Delaporte <edthedev@gmail.com>
+# Licensed under the University of Illinois / NCSA Open Source License 
+# http://www.opensource.org/licenses/UoI-NCSA 
+# Created: 2011-08-04
+
+import optparse
+
+MIN_LENGTH = 12
+MAX_LENGTH = 30
+MIN_OCCUR = 2
+
+parser = optparse.OptionParser()
+(options, args) = parser.parse_args()
+
+def cleanWord(word):
+	unwanted_chars = ['\t', '\n', '%s', ':'
+	]
+	for character in unwanted_chars:
+		word = word.replace(character, '')
+	return word
+
+def cleanContent(content):
+	word_break_chars = [
+	'[', ']', ',', '.', '(', ')','/', ';', '{', '}', '=', '"', "'", ':', '\n', '\t', '%s'
+]
+	for character in word_break_chars:
+		content = content.replace(character, ' ')
+	return content
+
+def removeDictionaryWords(word_list):
+	return word_list 
+
+word_count = {}
+for filename in args:
+	f = open(filename, 'r')
+	content = ' '.join(f.readlines())
+	f.close()
+	content = cleanContent(content)
+	words = content.split(' ')
+	for word in words:
+		word = cleanWord(word)
+		if word_count.has_key(word):
+			word_count[word] += 1
+		else:
+			word_count[word] = 1
+
+print "These words occurred less than %d times:" % MIN_OCCUR
+for word in word_count:
+	if len(word) >= MIN_LENGTH and len(word) <= MAX_LENGTH:
+		if word_count[word] < MIN_OCCUR:
+			print word
