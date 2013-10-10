@@ -52,7 +52,7 @@ if __name__ == '__main__':
         'tilda-line': \
         '~'*longest_line,
     }
+# Also include things like comment definitions from the template JSON.
+    data.update(templates[args['<filetype>']])
 
     print template.format(**data)
-
-

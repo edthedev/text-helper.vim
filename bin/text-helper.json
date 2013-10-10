@@ -5,5 +5,12 @@
 		"h1": "{text}\n{double-line}",
 		"h2": "{text}\n{line}",
 		"h3": "{text}\n{tilda-line}"
-	   }
+	},
+	"vim":
+	{
+		"h1": "{comment} {line}\n{comment}\n{comment}\t{text}\n{comment}\n{comment} {line}",
+		"h2": "{comment} {double-line}\n{comment} {text}\n{comment} {double-line}",
+		"h3": "{comment} {text}\n{comment} {line}",
+		"comment": "\""
+	}
 }

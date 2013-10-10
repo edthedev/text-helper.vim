@@ -7,8 +7,8 @@ Requires
 ---------
 Python 2
 
-Examples
----------
+ReStructured Text Examples
+---------------------------
 
 Pressing ``<Leader>i`` will convert::
 
@@ -28,3 +28,30 @@ Into::
     Examples
     --------
 
+Vim Examples
+-------------
+
+This plugin also does headers for .vim files and the .vimrc file.
+
+Pressing ``<Leader>h1`` in a vim file will convert::
+
+    Example
+
+Into::
+
+    "   --------
+    "
+    "	Example
+    "
+    "   --------
+
+Similarly, pressing ``<Leader>h2`` would have resulted in::
+
+    " ========
+    " Example
+    " ========
+
+And, pressing ``<Leader>h3`` would have resulted in::
+
+    " Example
+    " --------
