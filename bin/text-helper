@@ -18,18 +18,32 @@ Supported tags:
     img - Image
     blockquote - Block Quote
 """
+import os
 import sys
+import simplejson
 
 # DocOpt is awesome. https://github.com/docopt/docopt
 from docopt import docopt
-args = docopt(__doc__, version='1.0')
 
 if __name__ == '__main__':
-    input_lines = sys.stdin.readlines()
+    _JSON_FILE = '{path}.json'.format(
+            path=os.path.realpath(__file__))
+    args = docopt(__doc__, version='1.0')
 
-    longest_line = len(max(input_lines, key=len))
+    f = open(_JSON_FILE, 'r')
+    json = f.read()
+    templates = simplejson.loads(json)
+
+    template = templates[args['<filetype>']][args['<tag>']]
+
+    text = sys.stdin.readlines()
+
+    longest_line = len(max(text, key=len))
+
+    text = '\n'.join(text)
+    text = text.rstrip('\n')
+
     data = {
-        'comment':options.comment,
         'text':text,
         'line': \
         '-'*longest_line, 
@@ -39,12 +53,6 @@ if __name__ == '__main__':
         '~'*longest_line,
     }
 
-    text = '\n'.join(input_lines)
-    text = text.rstrip('\n')
-    text = text.lstrip(options.comment)
-# text += ' '.join(args)
-    template_selected = '%s-%d' % (options.type, options.level)
-    if options.type == 'confluence':
-     print """h%d. %s""" % (options.level , text)
-    else:
-    print string.Template(templates[template_selected]).substitute(data)
+    print template.format(**data)
+
+

@@ -297,5 +297,5 @@ map <leader>tc :!python2 $HOME/projects/rst2confluence/rst2confluence.py % > /tm
 map <leader>xc :!cat % <bar> xclip -sel c
 
 " Create an image
-au FileType *.rst :map <Leader>i :.!$HOME/.vim/bundle/vim-rst/bin/text-helper rst image<Cr>
-
+"au FileType *.rst :map <Leader>m :.!$HOME/.vim/bundle/vim-rst/bin/text-helper rst img
+map <Leader>i :.!$HOME/.vim/bundle/vim-rst/bin/text-helper rst img<Cr>
