@@ -1,6 +1,7 @@
 {
 	"rst":
 	{
+		"comment": "RST Comment not defined. {text}",
 		"date": ":date: {date}",
 		"img": ".. image:: {text}\n\t:alt: {text}", 
 		"h1": "{text}\n{double-line}",

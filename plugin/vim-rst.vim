@@ -187,13 +187,6 @@ au FileType text set syntax=rest
 map <Leader>th :!$HOME/bin/multimarkdown % > %:r.html<Cr>
 map <Leader>vh :!chromium-browser %:r.html&<Cr>
 
-" =======================================================
-" Minion shortcuts
-" =======================================================
-" Review the current file in Minion.
-" https://bitbucket.org/edthedev/minion
-map <Leader>or :!minion --filename %<Cr>:q<Cr>
-
 
 set backspace=indent,eol,start " Backspace like an editor
 set ignorecase " Ignore case when searching
@@ -251,8 +244,6 @@ map <Leader>ol :!text-list-todos %<Cr>
 :map <Leader>tg :!make-graph %:r<Cr>
 :map <Leader>te :!ebook-convert %:r.html %:r.epub<Cr>
 
-"
-
 "   Minion stuff <Leader>o
 "
 " -----------------------------------------------------------------------
@@ -303,6 +294,7 @@ map <leader>xc :!cat % <bar> xclip -sel c
 " =======================
 " ReStructuredText Files
 " =======================
+" RST is the default assumption for this plugin.
 
 map <Leader>d :.!$HOME/.vim/bundle/vim-rst/bin/text-helper rst date<Cr><Cr>
 map <Leader>i :.!$HOME/.vim/bundle/vim-rst/bin/text-helper rst img<Cr><Cr>
@@ -329,8 +321,4 @@ autocmd FileType html map <Leader>d :.!$HOME/.vim/bundle/vim-rst/bin/text-helper
 autocmd FileType html map <Leader>h1 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper html h1<Cr>2j
 autocmd FileType html map <Leader>h2 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper html h2<Cr>2j
 autocmd FileType html map <Leader>h3 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper html h3<Cr>2j
-
-
-
-
 

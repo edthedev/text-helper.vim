@@ -47,7 +47,7 @@ if __name__ == '__main__':
     data = {}
 # Also include things like comment definitions from the template JSON.
     data.update(templates[args['<filetype>']])
-    data = {
+    data.update({
         'date': datetime.datetime.today().strftime('%Y-%m-%d'),
         'text':text,
         'line': \
@@ -56,6 +56,8 @@ if __name__ == '__main__':
         '='*longest_line,
         'tilda-line': \
         '~'*longest_line,
-    }
+    })
 
+#    print args
+#    print str(data)
     print template.format(**data)
