@@ -163,9 +163,6 @@ au FileType *.vim map <Leader>h3 :.!$HOME/.vim/bundle/vim-rst/bin/text-make-head
 map <Leader>tw :!$HOME/.vim/bundle/vim-rst/bin/text-send-to-wordpress %<Cr>
 
 " Plain text headers
-map <Leader>h1 :.!$HOME/.vim/bundle/vim-rst/bin/text-make-header -l 1<Cr>2j
-map <Leader>h2 :.!$HOME/.vim/bundle/vim-rst/bin/text-make-header -l 2<Cr>2j
-map <Leader>h3 :.!$HOME/.vim/bundle/vim-rst/bin/text-make-header -l 3<Cr>2j
 map <Leader>hl :!list-headers %<Cr>
 " au BufRead,BufNewFile.vim/bundle map <Leader>h2 :.!$HOME/.vim/bundle/vim-rst/bin/text-make-header -l 2 -c.vim/bundlerc<Cr>2j
 
@@ -298,4 +295,7 @@ map <leader>xc :!cat % <bar> xclip -sel c
 
 " Create an image
 "au FileType *.rst :map <Leader>m :.!$HOME/.vim/bundle/vim-rst/bin/text-helper rst img
-map <Leader>i :.!$HOME/.vim/bundle/vim-rst/bin/text-helper rst img<Cr>
+map <Leader>i :.!$HOME/.vim/bundle/vim-rst/bin/text-helper rst img<Cr><Cr>
+map <Leader>h1 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper rst h1<Cr><Cr>
+map <Leader>h2 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper rst h2<Cr><Cr>
+map <Leader>h3 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper rst h3<Cr><Cr>

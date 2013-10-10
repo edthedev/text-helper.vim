@@ -1,1 +1,9 @@
-{"rst": {"img": "..image: {text}"}}
+{
+	"rst":
+	{
+		"img": ".. image:: {text}\n\t:alt: {text}", 
+		"h1": "{text}\n{double-line}",
+		"h2": "{text}\n{line}",
+		"h3": "{text}\n{tilda-line}"
+	   }
+}

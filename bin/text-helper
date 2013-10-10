@@ -47,9 +47,9 @@ if __name__ == '__main__':
         'text':text,
         'line': \
         '-'*longest_line, 
-        'double_line': \
+        'double-line': \
         '='*longest_line,
-        'tilda_line': \
+        'tilda-line': \
         '~'*longest_line,
     }
 
