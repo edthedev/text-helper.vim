@@ -293,30 +293,44 @@ map <leader>tc :!python2 $HOME/projects/rst2confluence/rst2confluence.py % > /tm
 " Copy entire document to clipboard.
 map <leader>xc :!cat % <bar> xclip -sel c
 
-" Create an image
-"au FileType *.rst :map <Leader>m :.!$HOME/.vim/bundle/vim-rst/bin/text-helper rst img
+
+" ---------------
+"
+"	Updated Plugin
+"
+" ---------------
+
+" =======================
+" ReStructuredText Files
+" =======================
+
+map <Leader>d :.!$HOME/.vim/bundle/vim-rst/bin/text-helper rst date<Cr><Cr>
 map <Leader>i :.!$HOME/.vim/bundle/vim-rst/bin/text-helper rst img<Cr><Cr>
 map <Leader>h1 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper rst h1<Cr>2j
 map <Leader>h2 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper rst h2<Cr>2j
 map <Leader>h3 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper rst h3<Cr>2j
 " 2j jumps down a couple lines after, since the text expands a bit.
 
+" ==========
+" Vim Files
+" ==========
 
 "  .vim file headers. Should pickup .vimrc automatically too.
 " -------------------------------------------------------
+autocmd FileType vim map <Leader>d :.!$HOME/.vim/bundle/vim-rst/bin/text-helper vim date<Cr>2j
 autocmd FileType vim map <Leader>h1 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper vim h1<Cr>2j
 autocmd FileType vim map <Leader>h2 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper vim h2<Cr>2j
 autocmd FileType vim map <Leader>h3 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper vim h3<Cr>2j
 
-" --------
-"
-"	Example
-"
-" --------
+" ======
+" HTML 
+" ======
+autocmd FileType html map <Leader>d :.!$HOME/.vim/bundle/vim-rst/bin/text-helper html date<Cr>2j
+autocmd FileType html map <Leader>h1 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper html h1<Cr>2j
+autocmd FileType html map <Leader>h2 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper html h2<Cr>2j
+autocmd FileType html map <Leader>h3 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper html h3<Cr>2j
 
-" ========
-" Example
-" ========
 
-" Example
-" --------
+
+
+

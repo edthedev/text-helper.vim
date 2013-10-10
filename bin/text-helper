@@ -21,6 +21,7 @@ Supported tags:
 import os
 import sys
 import simplejson
+import datetime
 
 # DocOpt is awesome. https://github.com/docopt/docopt
 from docopt import docopt
@@ -43,7 +44,11 @@ if __name__ == '__main__':
     text = '\n'.join(text)
     text = text.rstrip('\n')
 
+    data = {}
+# Also include things like comment definitions from the template JSON.
+    data.update(templates[args['<filetype>']])
     data = {
+        'date': datetime.datetime.today().strftime('%Y-%m-%d'),
         'text':text,
         'line': \
         '-'*longest_line, 
@@ -52,7 +57,5 @@ if __name__ == '__main__':
         'tilda-line': \
         '~'*longest_line,
     }
-# Also include things like comment definitions from the template JSON.
-    data.update(templates[args['<filetype>']])
 
     print template.format(**data)
