@@ -1,0 +1,50 @@
+#!/usr/bin/env python2
+"""Creates and manages a folder full of reminder files.
+
+Usage: 
+    text-helper <filetype> <tag>
+
+Options:
+    -h --help               Show this help.
+    --version               Show version.
+
+Supported file types:
+    rst - ReStructuredText
+
+Supported tags:
+    h1 - Header 1
+    h2 - Header 2
+    h3 - Header 3
+    img - Image
+    blockquote - Block Quote
+"""
+import sys
+
+# DocOpt is awesome. https://github.com/docopt/docopt
+from docopt import docopt
+args = docopt(__doc__, version='1.0')
+
+if __name__ == '__main__':
+    input_lines = sys.stdin.readlines()
+
+    longest_line = len(max(input_lines, key=len))
+    data = {
+        'comment':options.comment,
+        'text':text,
+        'line': \
+        '-'*longest_line, 
+        'double_line': \
+        '='*longest_line,
+        'tilda_line': \
+        '~'*longest_line,
+    }
+
+    text = '\n'.join(input_lines)
+    text = text.rstrip('\n')
+    text = text.lstrip(options.comment)
+# text += ' '.join(args)
+    template_selected = '%s-%d' % (options.type, options.level)
+    if options.type == 'confluence':
+     print """h%d. %s""" % (options.level , text)
+    else:
+    print string.Template(templates[template_selected]).substitute(data)

@@ -295,3 +295,7 @@ map <leader>tc :!python2 $HOME/projects/rst2confluence/rst2confluence.py % > /tm
 
 " Copy entire document to clipboard.
 map <leader>xc :!cat % <bar> xclip -sel c
+
+" Create an image
+au FileType *.rst :map <Leader>i :.!$HOME/.vim/bundle/vim-rst/bin/text-helper rst image<Cr>
+
