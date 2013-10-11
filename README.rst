@@ -55,3 +55,9 @@ And, pressing ``<Leader>h3`` would have resulted in::
 
     " Example
     " --------
+
+More
+-----
+Also supports the same operations for HTML files, Confluence Wiki markup, and Markdown.
+I don't use these as much, so if you have any issue using them, drop me a note.
+
