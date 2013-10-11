@@ -56,8 +56,26 @@ And, pressing ``<Leader>h3`` would have resulted in::
     " Example
     " --------
 
-More
------
+Keyboard Shortcuts
+-------------------
+
+Shortcuts are::
+
+    <Leader>d - Insert the current date.
+    <Leader>i - Add a refernce to an image. 
+    <Leader>h1 - Convert the current line to a top header line.
+    <Leader>h2 - Convert the current line to a secondary header line.
+    <Leader>s - Add a 'SCRATCH NOTES BELOW THIS POINT' header.
+
+Additional header levels are left as the world's least surprising easter eggs, or as excercises for the reader, depending on the markup language.
+
+Additional Formats
+-------------------
 Also supports the same operations for HTML files, Confluence Wiki markup, and Markdown.
 I don't use these as much, so if you have any issue using them, drop me a note.
 
+Philosophy
+-----------
+The core purpose of this plugin is to remember miscellaneous trivia markup languages so you don't have to. The secondary purpose is to save keystrokes.
+
+Where possible, this plugin sacrifices elegance in favor of clarity, in the hopes that others will be able to quickly fork and improve it. 
