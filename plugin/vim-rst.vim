@@ -9,11 +9,6 @@ au BufNewFile,BufRead *.txt set filetype=txt
 " Use ReStructuredText highlighting for all text files.
 au FileType text set syntax=rest
 
-" ================
-" Shared Commands
-" ================
-
-
 " =======================
 " ReStructuredText Files
 " =======================
@@ -69,32 +64,13 @@ autocmd FileType *.mkd map <Leader>h4 :.!$HOME/.vim/bundle/vim-rst/bin/text-help
 autocmd FileType *.mkd map <Leader>h5 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper markdown h5<Cr><Cr>
 autocmd FileType *.mkd map <Leader>i :.!$HOME/.vim/bundle/vim-rst/bin/text-helper markdown img<Cr><Cr>
 
+" Convert document from RST to Confluence Wiki format.
+" Uses https://github.com/kenichiro22/rst2confluence
+" TODO: Copy this script into this plugin...
+" map <leader>tc :!python2 $HOME/projects/rst2confluence/rst2confluence.py % > /tmp/%:t:r.wiki<Cr>:badd /tmp/%:t:r.wiki<Cr>:bn<Cr>
+
 " TODO: Add some useful abbreviations? 
 " Abbreviations
 " ab pm Project Manager
 " ab lead Lead Developer
 " ab dev Developer
-
-
-" TODO: Move the other helper scripts into their own separate plugins
-" =======================================================
-" TODO Management 
-" =======================================================
-"  Probably should be it's own separate plugin...
-" Done / Todo
-map <Leader>od :.!text-task-toggle<Cr>$ 
-map <Leader>d :.!text-task-toggle<Cr>$ 
-map <Leader>ol :!text-list-todos %<Cr>
-
-" Sort file by completed vs TODO lines
-" :map <Leader>os :%!done_to_top<Cr>
-
-" List organizer progress of TODO / DONE / WAITING
-:map <Leader>op :!text-task-progress %<Cr>
-" Waiting 
-:map <Leader>ow :.!text-task-toggle -w<Cr>$ 
-
-
-" Convert document from RST to Confluence Wiki format.
-" Uses https://github.com/kenichiro22/rst2confluence
-map <leader>tc :!python2 $HOME/projects/rst2confluence/rst2confluence.py % > /tmp/%:t:r.wiki<Cr>:badd /tmp/%:t:r.wiki<Cr>:bn<Cr>
