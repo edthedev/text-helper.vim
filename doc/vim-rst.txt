@@ -1,1 +1,0 @@
-Helps with editing ReStructuredText
