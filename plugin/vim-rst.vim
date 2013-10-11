@@ -4,7 +4,7 @@
 "
 " ---------------
 
-" Text is ReStructuredText
+" By default, all text is ReStructuredText
 au BufNewFile,BufRead *.txt set filetype=txt
 " Use ReStructuredText highlighting for all text files.
 au FileType text set syntax=rest
@@ -27,6 +27,7 @@ map <Leader>s :.!$HOME/.vim/bundle/vim-rst/bin/text-helper rst scratch<Cr><Cr>
 " =======================
 " Confluence Wiki Markup
 " =======================
+" # vi: syntax=confluence
 autocmd FileType confluence map <Leader>d :.!$HOME/.vim/bundle/vim-rst/bin/text-helper confluence date<Cr><Cr>
 autocmd FileType confluence map <Leader>h1 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper confluence h1<Cr>2j
 autocmd FileType confluence map <Leader>h2 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper confluence h2<Cr>2j
@@ -56,6 +57,8 @@ autocmd FileType html map <Leader>h3 :.!$HOME/.vim/bundle/vim-rst/bin/text-helpe
 " =========
 " Markdown
 " =========
+"
+" # vi: syntax=markdown
 autocmd FileType *.mkd map <Leader>d :.!$HOME/.vim/bundle/vim-rst/bin/text-helper markdown date<Cr><Cr>
 autocmd FileType *.mkd map <Leader>h1 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper markdown h1<Cr>2j
 autocmd FileType *.mkd map <Leader>h2 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper markdown h2<Cr>2j
