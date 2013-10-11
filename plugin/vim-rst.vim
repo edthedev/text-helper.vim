@@ -4,7 +4,7 @@
 "
 " ---------------
 
-" Recognize some file types...
+" Text is ReStructuredText
 au BufNewFile,BufRead *.txt set filetype=txt
 " Use ReStructuredText highlighting for all text files.
 au FileType text set syntax=rest
@@ -29,6 +29,15 @@ map <Leader>h3 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper rst h3<Cr>2j
 map <Leader>s :.!$HOME/.vim/bundle/vim-rst/bin/text-helper rst scratch<Cr><Cr>
 " 2j jumps down a couple lines after, since the text expands a bit.
 
+" =======================
+" Confluence Wiki Markup
+" =======================
+autocmd FileType confluence map <Leader>d :.!$HOME/.vim/bundle/vim-rst/bin/text-helper confluence date<Cr><Cr>
+autocmd FileType confluence map <Leader>h1 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper confluence h1<Cr>2j
+autocmd FileType confluence map <Leader>h2 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper confluence h2<Cr>2j
+autocmd FileType confluence map <Leader>h3 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper confluence h3<Cr>2j
+autocmd FileType confluence map <Leader>i :.!$HOME/.vim/bundle/vim-rst/bin/text-helper confluence img<Cr>2j
+
 " ==========
 " Vim Files
 " ==========
@@ -52,28 +61,19 @@ autocmd FileType html map <Leader>h3 :.!$HOME/.vim/bundle/vim-rst/bin/text-helpe
 " =========
 " Markdown
 " =========
-autocmd FileType markdown map <Leader>d :.!$HOME/.vim/bundle/vim-rst/bin/text-helper markdown date<Cr><Cr>
-autocmd FileType markdown map <Leader>h1 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper markdown h1<Cr>2j
-autocmd FileType markdown map <Leader>h2 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper markdown h2<Cr>2j
-autocmd FileType markdown map <Leader>h3 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper markdown h3<Cr><Cr>
-autocmd FileType markdown map <Leader>i :.!$HOME/.vim/bundle/vim-rst/bin/text-helper markdown img<Cr><Cr>
+autocmd FileType *.mkd map <Leader>d :.!$HOME/.vim/bundle/vim-rst/bin/text-helper markdown date<Cr><Cr>
+autocmd FileType *.mkd map <Leader>h1 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper markdown h1<Cr>2j
+autocmd FileType *.mkd map <Leader>h2 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper markdown h2<Cr>2j
+autocmd FileType *.mkd map <Leader>h3 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper markdown h3<Cr><Cr>
+autocmd FileType *.mkd map <Leader>h4 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper markdown h4<Cr><Cr>
+autocmd FileType *.mkd map <Leader>h5 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper markdown h5<Cr><Cr>
+autocmd FileType *.mkd map <Leader>i :.!$HOME/.vim/bundle/vim-rst/bin/text-helper markdown img<Cr><Cr>
 
 " TODO: Add some useful abbreviations? 
 " Abbreviations
 " ab pm Project Manager
 " ab lead Lead Developer
 " ab dev Developer
-"
-"
-"    Confluence headers
-" -------------------------------------------------------
-"  TODO: Convert confluence stuff into text-helper instead of separate
-"  scripts.
-au FileType *.mkd :map <Leader>h1 :.!$HOME/.vim/bundle/vim-rst/bin/text-make-header -t confluence -l 1<Cr>2j
-au BufEnter *.mkd :map <Leader>h2 :.!$HOME/.vim/bundle/vim-rst/bin/text-make-header -t confluence -l 2<Cr>2j
-au BufEnter *.mkd :map <Leader>h3 :.!$HOME/.vim/bundle/vim-rst/bin/text-make-header -t confluence -l 3<Cr>2j
-au BufEnter *.mkd :map <Leader>h4 :.!$HOME/.vim/bundle/vim-rst/bin/text-make-header -t confluence -l 4<Cr>2j
-au BufEnter *.mkd :map <Leader>h5 :.!$HOME/.vim/bundle/vim-rst/bin/text-make-header -t confluence -l 5<Cr>2j
 
 
 " TODO: Move the other helper scripts into their own separate plugins

@@ -1,4 +1,16 @@
 {
+	"confluence":
+	{
+		"comment": "NOTE: {text}",
+		"date": "{text}{date}",
+		"img": "!{text}|width=600!", 
+		"h1": "h1. {text}",
+		"h2": "h2. {text}",
+		"h3": "h3. {text}",
+		"h4": "h4. {text}",
+		"h5": "h5. {text}",
+		"scratch": "{note}SCRATCH Notes below this point.{note}{text}"
+	},
 	"rst":
 	{
 		"comment": "NOTE: {text}",
@@ -37,4 +49,5 @@
 		"img":"![{text}]({text}.jpg)",
 		"scratch": "{double-line}\n\tSCRATCH\n{double-line}"
 	}
+
 }
