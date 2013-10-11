@@ -1,12 +1,13 @@
 {
 	"rst":
 	{
-		"comment": "RST Comment not defined. {text}",
+		"comment": "NOTE: {text}",
 		"date": ":date: {date}",
 		"img": ".. image:: {text}\n\t:alt: {text}", 
 		"h1": "{text}\n{double-line}",
 		"h2": "{text}\n{line}",
-		"h3": "{text}\n{tilda-line}"
+		"h3": "{text}\n{tilda-line}",
+		"scratch": "{double-line}\n\tSCRATCH\n{double-line}"
 	},
 	"html":
 	{
@@ -15,7 +16,8 @@
 		"img": "<img src=\"{text}\" alt=\"{text}\">", 
 		"h1": "<h1>{text}</h1>",
 		"h2": "<h2>{text}</h2>",
-		"h3": "<h3>{text}</h3>"
+		"h3": "<h3>{text}</h3>",
+		"scratch": "{double-line}\n\tSCRATCH\n{double-line}"
 	},
 	"vim":
 	{
@@ -23,6 +25,16 @@
 		"date": "{date}",
 		"h1": "{comment} {line}\n{comment}\n{comment}\t{text}\n{comment}\n{comment} {line}",
 		"h2": "{comment} {double-line}\n{comment} {text}\n{comment} {double-line}",
-		"h3": "{comment} {text}\n{comment} {line}"
+		"h3": "{comment} {text}\n{comment} {line}",
+		"scratch": "{comment}\t{double-line}\n{comment}\tSCRATCH\n{comment}\t{double-line}"
+	},
+	"markdown":
+	{
+		"date": "{date}",
+		"h1":"{text}\n{double-line}",
+		"h2":"{text}\n{line}",
+		"h3":"### {text}",
+		"img":"![{text}]({text}.jpg)",
+		"scratch": "{double-line}\n\tSCRATCH\n{double-line}"
 	}
 }
