@@ -14,6 +14,7 @@
 	},
 	"rst":
 	{
+		"bold": "*{selection}*",
 		"comment": "NOTE: {text}",
 		"date": ":date: {date}",
 		"h1": "{text}\n{double-line}",
@@ -25,6 +26,7 @@
 	},
 	"html":
 	{
+		"bold": "<b>{text}</b>",
 		"comment": "<!-- {text} -->",
 		"date": "{date}",
 		"h1": "<h1>{text}</h1>",

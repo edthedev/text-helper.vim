@@ -3,14 +3,30 @@ vim-rst
 
 Vim bindings and Python scripts that make editing ReStructuredText files faster.
 
+Installation
+-------------
+This plugin is packaged for use with Vundle_.
+TODO: Link to Vundle.
+
+Install Vundle_ and then add 'edthedev/vim-rst' to your .vimrc.::
+
+    Bundle 'edthedev/vim-rst'
+
+Then, from within Vim, run BundleInstall.::
+
+    :BundleInstall
+
 Requires
 ---------
-Python 2
+Python 2.6 or later and the simplejson Python library.::
+
+    sudo apt-get install python
+    sudo pip install simplejson
 
 ReStructured Text Examples
 ---------------------------
 
-Pressing ``<Leader>i`` will convert::
+Pressing ``<Leader>img`` will convert::
 
     images/snake-in-a-top-hat.png
 
@@ -27,6 +43,16 @@ Into::
 
     Examples
     --------
+
+*New!* Pressing ``<Leader>b`` with the word 'bold' selected will convert::
+
+    Format this bold text.
+
+Into::
+
+    Format this *bold* text.
+
+
 
 Vim Examples
 -------------
