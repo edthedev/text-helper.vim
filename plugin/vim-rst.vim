@@ -5,7 +5,7 @@
 " ---------------
 
 " By default, all text is ReStructuredText
-au BufNewFile,BufRead *.txt set filetype=txt
+au BufNewFile,BufRead *.txt set filetype=rest
 " Use ReStructuredText highlighting for all text files.
 au FileType text set syntax=rest
 
