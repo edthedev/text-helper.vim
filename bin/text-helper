@@ -1,11 +1,12 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 """Creates and manages a folder full of reminder files.
 
 Usage: 
-    text-helper <filetype> <tag>
+    text-helper <filetype> <tag> [--selection=<selection>]
 
 Options:
     -h --help               Show this help.
+    -s --selection=<selection>         Selected text to apply formatting to.
     --version               Show version.
 
 Supported file types:
@@ -26,10 +27,31 @@ import datetime
 # DocOpt is awesome. https://github.com/docopt/docopt
 from docopt import docopt
 
+def parse_line(line):
+    """Parse out some dictionary keys from the current line.
+    """
+
+    data = {}
+    parts = line.split(' ')
+    leftovers = []
+    for part in parts:
+        if '=>' in part:
+            key, value = tuple(part.split('=>', 1))
+            data[key] = value
+        else:
+            leftovers.append(part)
+
+    return ' '.join(leftovers), data
+
 if __name__ == '__main__':
+
     _JSON_FILE = '{path}.json'.format(
             path=os.path.realpath(__file__))
     args = docopt(__doc__, version='1.0')
+
+    selection = ''
+    if '--selection' in args:
+        selection = args['--selection']
 
     f = open(_JSON_FILE, 'r')
     json = f.read()
@@ -44,20 +66,34 @@ if __name__ == '__main__':
     text = '\n'.join(text)
     text = text.rstrip('\n')
 
+    text, meta = parse_line(text)
+
     data = {}
 # Also include things like comment definitions from the template JSON.
     data.update(templates[args['<filetype>']])
     data.update({
         'date': datetime.datetime.today().strftime('%Y-%m-%d'),
         'text':text,
+        'url':'url_goes_here',
         'line': \
         '-'*longest_line, 
         'double-line': \
         '='*longest_line,
         'tilda-line': \
         '~'*longest_line,
+        'selection': selection,
     })
+    data.update(meta)
 
 #    print args
 #    print str(data)
-    print template.format(**data)
+    updated = template.format(**data)
+
+    if selection:
+# Use upate to replace just the selection
+        print text.replace(selection, updated)
+    else:
+# Print updated entire line.
+        print updated
+        
+

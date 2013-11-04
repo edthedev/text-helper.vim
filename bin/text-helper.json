@@ -9,26 +9,31 @@
 		"h3": "h3. {text}",
 		"h4": "h4. {text}",
 		"h5": "h5. {text}",
+		"link": "[{url}|{text}]", 
 		"scratch": "{note}SCRATCH Notes below this point.{note}{text}"
 	},
 	"rst":
 	{
+		"bold": "*{selection}*",
 		"comment": "NOTE: {text}",
 		"date": ":date: {date}",
-		"img": ".. image:: {text}\n\t:alt: {text}", 
 		"h1": "{text}\n{double-line}",
 		"h2": "{text}\n{line}",
 		"h3": "{text}\n{tilda-line}",
+		"img": ".. image:: {text}\n\t:alt: {text}", 
+		"link": ".. _{text}: {url}", 
 		"scratch": "{double-line}\n\tSCRATCH\n{double-line}"
 	},
 	"html":
 	{
+		"bold": "<b>{text}</b>",
 		"comment": "<!-- {text} -->",
 		"date": "{date}",
-		"img": "<img src=\"{text}\" alt=\"{text}\">", 
 		"h1": "<h1>{text}</h1>",
 		"h2": "<h2>{text}</h2>",
 		"h3": "<h3>{text}</h3>",
+		"img": "<img src=\"{text}\" alt=\"{text}\">", 
+		"link": "<a href={url}>{text}</a>", 
 		"scratch": "{double-line}\n\tSCRATCH\n{double-line}"
 	},
 	"vim":

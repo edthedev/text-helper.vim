@@ -16,11 +16,13 @@ au FileType text set syntax=rest
 " Note that some RST commands, such as Scratch,
 "  are prefectly nice for other file types too.
 
+map <Leader>b byw:.!$HOME/.vim/bundle/vim-rst/bin/text-helper rst bold --selection=<C-R>"<Cr>
 map <Leader>d :.!$HOME/.vim/bundle/vim-rst/bin/text-helper rst date<Cr><Cr>
-map <Leader>i :.!$HOME/.vim/bundle/vim-rst/bin/text-helper rst img<Cr><Cr>
 map <Leader>h1 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper rst h1<Cr>2j
 map <Leader>h2 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper rst h2<Cr>2j
 map <Leader>h3 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper rst h3<Cr>2j
+map <Leader>i :.!$HOME/.vim/bundle/vim-rst/bin/text-helper rst img<Cr><Cr>
+map <Leader>l :.!$HOME/.vim/bundle/vim-rst/bin/text-helper rst link<Cr><Cr>
 map <Leader>s :.!$HOME/.vim/bundle/vim-rst/bin/text-helper rst scratch<Cr><Cr>
 " 2j jumps down a couple lines after, since the text expands a bit.
 
@@ -32,7 +34,8 @@ autocmd FileType confluence map <Leader>d :.!$HOME/.vim/bundle/vim-rst/bin/text-
 autocmd FileType confluence map <Leader>h1 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper confluence h1<Cr>2j
 autocmd FileType confluence map <Leader>h2 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper confluence h2<Cr>2j
 autocmd FileType confluence map <Leader>h3 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper confluence h3<Cr>2j
-autocmd FileType confluence map <Leader>i :.!$HOME/.vim/bundle/vim-rst/bin/text-helper confluence img<Cr>2j
+autocmd FileType confluence map <Leader>img :.!$HOME/.vim/bundle/vim-rst/bin/text-helper confluence img<Cr>2j
+autocmd FileType confluence map <Leader>a :.!$HOME/.vim/bundle/vim-rst/bin/text-helper confluence link<Cr>2j
 
 " ==========
 " Vim Files
@@ -49,10 +52,13 @@ autocmd FileType vim map <Leader>s :.!$HOME/.vim/bundle/vim-rst/bin/text-helper 
 " ======
 " HTML 
 " ======
+autocmd FileType html map <Leader>b yw:.!$HOME/.vim/bundle/vim-rst/bin/text-helper html bold --selection=<C-R>"
 autocmd FileType html map <Leader>d :.!$HOME/.vim/bundle/vim-rst/bin/text-helper html date<Cr><Cr>
 autocmd FileType html map <Leader>h1 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper html h1<Cr>2j
 autocmd FileType html map <Leader>h2 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper html h2<Cr>2j
 autocmd FileType html map <Leader>h3 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper html h3<Cr>2j
+autocmd FileType html map <Leader>img :.!$HOME/.vim/bundle/vim-rst/bin/text-helper html img<Cr><Cr>
+autocmd FileType html map <Leader>a :.!$HOME/.vim/bundle/vim-rst/bin/text-helper html link<Cr><Cr>
 
 " =========
 " Markdown
@@ -65,7 +71,7 @@ autocmd FileType *.mkd map <Leader>h2 :.!$HOME/.vim/bundle/vim-rst/bin/text-help
 autocmd FileType *.mkd map <Leader>h3 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper markdown h3<Cr><Cr>
 autocmd FileType *.mkd map <Leader>h4 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper markdown h4<Cr><Cr>
 autocmd FileType *.mkd map <Leader>h5 :.!$HOME/.vim/bundle/vim-rst/bin/text-helper markdown h5<Cr><Cr>
-autocmd FileType *.mkd map <Leader>i :.!$HOME/.vim/bundle/vim-rst/bin/text-helper markdown img<Cr><Cr>
+autocmd FileType *.mkd map <Leader>img :.!$HOME/.vim/bundle/vim-rst/bin/text-helper markdown img<Cr><Cr>
 
 " Convert document from RST to Confluence Wiki format.
 " Uses https://github.com/kenichiro22/rst2confluence
