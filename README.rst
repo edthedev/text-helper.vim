@@ -3,10 +3,15 @@ vim-rst
 
 Vim bindings and Python scripts that make editing ReStructuredText files faster.
 
-Installation
--------------
+
+Installation 
+-----------------------------
 This plugin is packaged for use with Vundle_.
-TODO: Link to Vundle.
+This plugin requires Vim_ to be compiled with Python_ support.
+
+.. _Vim: http://vim.org/about.php
+.. _Python: http://python.org
+.. _Vundle: https://github.com/gmarik/vundle/blob/master/README.md 
 
 Install Vundle_ and then add 'edthedev/vim-rst' to your .vimrc.::
 
