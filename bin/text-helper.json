@@ -52,6 +52,7 @@
 		"h2":"{text}\n{line}",
 		"h3":"### {text}",
 		"img":"![{text}]({text}.jpg)",
+		"link": "[{text}](http://{text})",
 		"scratch": "{double-line}\n\tSCRATCH\n{double-line}"
 	}
 
