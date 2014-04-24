@@ -2,7 +2,7 @@
 	"confluence":
 	{
 		"comment": "NOTE: {text}",
-		"date": "{text}{date}",
+		"date": "{text} {date}",
 		"img": "!{text}|width=600!", 
 		"h1": "h1. {text}",
 		"h2": "h2. {text}",
@@ -16,7 +16,7 @@
 	{
 		"bold": "*{selection}*",
 		"comment": "NOTE: {text}",
-		"date": ":date: {date}",
+		"date":"{text} {date}",
 		"h1": "{text}\n{double-line}",
 		"h2": "{text}\n{line}",
 		"h3": "{text}\n{tilda-line}",
@@ -28,7 +28,7 @@
 	{
 		"bold": "<b>{text}</b>",
 		"comment": "<!-- {text} -->",
-		"date": "{date}",
+		"date": "{text} {date}",
 		"h1": "<h1>{text}</h1>",
 		"h2": "<h2>{text}</h2>",
 		"h3": "<h3>{text}</h3>",
@@ -39,7 +39,7 @@
 	"vim":
 	{
 		"comment": "\"",
-		"date": "{date}",
+		"date": "{text} {date}",
 		"h1": "{comment} {line}\n{comment}\n{comment}\t{text}\n{comment}\n{comment} {line}",
 		"h2": "{comment} {double-line}\n{comment} {text}\n{comment} {double-line}",
 		"h3": "{comment} {text}\n{comment} {line}",
@@ -47,7 +47,7 @@
 	},
 	"markdown":
 	{
-		"date": "{date}",
+		"date": "{text} {date}",
 		"h1":"{text}\n{double-line}",
 		"h2":"{text}\n{line}",
 		"h3":"### {text}",
