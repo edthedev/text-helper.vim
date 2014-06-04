@@ -4,15 +4,6 @@
 "
 " ---------------
 
-" By default, all text is ReStructuredText
-au BufNewFile,BufRead *.txt set filetype=rest
-
-" Recognize Markdown
-au BufNewFile,BufRead *.md set filetype=markdown
-au BufNewFile,BufRead *.mkd set filetype=markdown
-" Use ReStructuredText highlighting for all text files.
-au FileType text set syntax=rest
-
 " =======================
 " ReStructuredText Files
 " =======================
