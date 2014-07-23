@@ -1,17 +1,13 @@
 " =======================================================
 "  Allow files to specify what their highlight mode is.
 " =======================================================
-" set modeline
+set modeline
 " i.e.:
 " # vi: syntax=apache
 
 " ===========================
 " Recognize more file types.
 " ===========================
-
-" Highlight text documents as ReStructuredText
-au BufReadPost *.txt set filetype=rst
-au BufRead *.txt set syntax=rst 
 
 " Display .conf as INI                   
 au BufReadPost *.conf set filetype=dosini
