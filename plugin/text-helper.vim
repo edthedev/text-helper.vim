@@ -11,14 +11,14 @@
 " Note that some RST commands, such as Scratch,
 "  are prefectly nice for other file types too.
 
-map <Leader>b byw:.!$HOME/.vim/bundle/text-helper.vim/bin/text-helper rst bold --selection=<C-R>"<Cr>
-map <Leader>d :.!$HOME/.vim/bundle/text-helper.vim/bin/text-helper rst date<Cr><Cr>
-map <Leader>h1 :.!$HOME/.vim/bundle/text-helper.vim/bin/text-helper rst h1<Cr>2j
-map <Leader>h2 :.!$HOME/.vim/bundle/text-helper.vim/bin/text-helper rst h2<Cr>2j
-map <Leader>h3 :.!$HOME/.vim/bundle/text-helper.vim/bin/text-helper rst h3<Cr>2j
-map <Leader>i :.!$HOME/.vim/bundle/text-helper.vim/bin/text-helper rst img<Cr><Cr>
-map <Leader>l :.!$HOME/.vim/bundle/text-helper.vim/bin/text-helper rst link<Cr><Cr>
-map <Leader>s :.!$HOME/.vim/bundle/text-helper.vim/bin/text-helper rst scratch<Cr><Cr>
+autocmd FileType rst map <Leader>b byw:.!$HOME/.vim/bundle/text-helper.vim/bin/text-helper rst bold --selection=<C-R>"<Cr>
+autocmd FileType rst map <Leader>d :.!$HOME/.vim/bundle/text-helper.vim/bin/text-helper rst date<Cr><Cr>
+autocmd FileType rst map <Leader>h1 :.!$HOME/.vim/bundle/text-helper.vim/bin/text-helper rst h1<Cr>2j
+autocmd FileType rst map <Leader>h2 :.!$HOME/.vim/bundle/text-helper.vim/bin/text-helper rst h2<Cr>2j
+autocmd FileType rst map <Leader>h3 :.!$HOME/.vim/bundle/text-helper.vim/bin/text-helper rst h3<Cr>2j
+autocmd FileType rst map <Leader>i :.!$HOME/.vim/bundle/text-helper.vim/bin/text-helper rst img<Cr><Cr>
+autocmd FileType rst map <Leader>l :.!$HOME/.vim/bundle/text-helper.vim/bin/text-helper rst link<Cr><Cr>
+autocmd FileType rst map <Leader>s :.!$HOME/.vim/bundle/text-helper.vim/bin/text-helper rst scratch<Cr><Cr>
 " 2j jumps down a couple lines after, since the text expands a bit.
 
 " =======================
